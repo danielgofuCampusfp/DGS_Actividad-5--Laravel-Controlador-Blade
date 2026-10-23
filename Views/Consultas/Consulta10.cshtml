@@ -1,0 +1,35 @@
+@model List<ConsultasLINQ.Models.CicloAgrupadoViewModel>
+
+@{
+    ViewData["Title"] = "Consulta 10";
+}
+
+<div class="consulta-header">
+    <h1>Consulta 10. Alumnos por ciclo</h1>
+    <p>Se agrupan los alumnos por ciclo y se muestran los nombres pertenecientes a cada uno.</p>
+</div>
+
+@if (Model.Count > 0)
+{
+    <div class="cycle-grid">
+        @foreach (var ciclo in Model)
+        {
+            <div class="cycle-card">
+                <h3>@ciclo.NombreCiclo</h3>
+                <p><strong>Total:</strong> @ciclo.NumeroAlumnos alumnos</p>
+                <ul>
+                    @foreach (var alumno in ciclo.Alumnos)
+                    {
+                        <li>@alumno</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">No existen grupos de ciclos para esta consulta.</div>
+}
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Volver al inicio</a>

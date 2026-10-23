@@ -1,0 +1,40 @@
+@model ConsultasLINQ.Models.MejorExpedienteViewModel
+
+@{
+    ViewData["Title"] = "Consulta 8";
+}
+
+<div class="consulta-header">
+    <h1>Consulta 8. Mejor expediente</h1>
+    <p>Se obtiene el alumno con la nota media más alta.</p>
+</div>
+
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Curso</th>
+                <th>Ciclo</th>
+                <th>Nota media</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Nombre</td>
+                <td>@Model.Edad</td>
+                <td>@Model.Curso</td>
+                <td>@Model.Ciclo</td>
+                <td>@Model.NotaMedia.ToString("0.00")</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">No hay alumnos en la lista para esta consulta.</div>
+}
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Volver al inicio</a>

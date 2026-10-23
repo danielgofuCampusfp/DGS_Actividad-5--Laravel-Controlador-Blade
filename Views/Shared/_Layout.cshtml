@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Aula LINQ</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container site-nav">
+            <a class="site-name" asp-controller="Home" asp-action="Index">Aula LINQ</a>
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Inicio</a>
+                <a asp-controller="Consultas" asp-action="Consulta1">Consulta 1</a>
+                <a asp-controller="Consultas" asp-action="Consulta2">Consulta 2</a>
+                <a asp-controller="Consultas" asp-action="Consulta3">Consulta 3</a>
+                <a asp-controller="Consultas" asp-action="Consulta4">Consulta 4</a>
+                <a asp-controller="Consultas" asp-action="Consulta5">Consulta 5</a>
+                <a asp-controller="Consultas" asp-action="Consulta6">Consulta 6</a>
+                <a asp-controller="Consultas" asp-action="Consulta7">Consulta 7</a>
+                <a asp-controller="Consultas" asp-action="Consulta8">Consulta 8</a>
+                <a asp-controller="Consultas" asp-action="Consulta9">Consulta 9</a>
+                <a asp-controller="Consultas" asp-action="Consulta10">Consulta 10</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        @RenderBody()
+    </main>
+</body>
+</html>

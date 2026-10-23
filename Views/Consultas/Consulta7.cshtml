@@ -1,0 +1,18 @@
+@model ConsultasLINQ.Models.NotaMediaGeneralViewModel
+
+@{
+    ViewData["Title"] = "Consulta 7";
+}
+
+<div class="consulta-header">
+    <h1>Consulta 7. Nota media general</h1>
+    <p>Se calcula la media aritmética de las notas de todos los alumnos.</p>
+</div>
+
+<div class="resultado-card">
+    <h2>Nota media general</h2>
+    <div class="resultado-valor">@Model.NotaMediaGeneral.ToString("0.00")</div>
+    <p>Total de alumnos utilizados: @Model.TotalAlumnos</p>
+</div>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Volver al inicio</a>

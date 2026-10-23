@@ -1,0 +1,41 @@
+@model List<ConsultasLINQ.Models.AlumnoDestacadoViewModel>
+
+@{
+    ViewData["Title"] = "Consulta 5";
+}
+
+<div class="consulta-header">
+    <h1>Consulta 5. Alumnos destacados de DAW</h1>
+    <p>Se muestran los alumnos del ciclo DAW con una nota media estrictamente superior a 8.</p>
+</div>
+
+@if (Model.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Curso</th>
+                <th>Ciclo</th>
+                <th>Nota media</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model)
+            {
+                <tr>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.Curso</td>
+                    <td>@alumno.Ciclo</td>
+                    <td>@alumno.NotaMedia.ToString("0.00")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">No existen alumnos para esta consulta.</div>
+}
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3">Volver al inicio</a>
